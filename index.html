@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://program09.github.io/YORDIALCANTARA/public/css/Icons/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="cont_flex">
+            <div class="wrapper">
+                <form action="">
+                    <h1>Iniciar sesión con tu cuenta institucional</h1>
+                    <br>
+                    <div class="grup-input">
+                        <input type="email" id="names" name="names" placeholder=" ">
+                        <label for="names"><i class="fa-light fa-envelope"></i> Correo electrónico*</label>
+                    </div><br>
+                    <div class="grup-input">
+                        <input type="password" id="pass" name="pass" placeholder=" " autocomplete="off">
+                        <label for="pass"><i class="fa-light fa-lock-keyhole"></i> Contraseña*</label>
+                    </div>
+                    <button type="submit" id="loginBtn" disabled><i
+                            class="fa-light fa-arrow-right-to-bracket"></i>Entrar al sistema</button>
+                    <div class="links-other">
+                        <a href="">¿Necesitas ayuda?</a>
+                    </div>
+                    <div class="copyright">
+                        <p>&copy;
+                            <script>document.write(new Date().getFullYear())</script> by <a href="">Yordi Alcántara
+                                Paico</a>
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const namesInput = document.getElementById('names');
+        const passInput = document.getElementById('pass');
+        const loginBtn = document.getElementById('loginBtn');
+
+        namesInput.addEventListener('input', updateButtonStatus);
+        passInput.addEventListener('input', updateButtonStatus);
+
+        function updateButtonStatus() {
+            if (namesInput.value.trim() !== '' && passInput.value.trim() !== '') {
+                loginBtn.removeAttribute('disabled');
+            } else {
+                loginBtn.setAttribute('disabled', 'true');
+            }
+        }
+
+    </script>
+</body>
+
+</html>
